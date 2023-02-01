@@ -9,6 +9,16 @@ export const FeedbackProvider = ({ children }) => {
       text: "This feedback item 1",
       rating: 9,
     },
+    {
+      id: 2,
+      text: "This feedback item 2",
+      rating: 10,
+    },
+    {
+      id: 3,
+      text: "This feedback item 3",
+      rating: 8,
+    },
   ]);
 
   const [feedbackEdit, setFeedbackEdit] = useState({
@@ -29,6 +39,15 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
+  //Update feedback
+
+  const updateFeedback = (id, updItem) => {
+    setFeedback(
+      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+    );
+  };
+
+  // Edit feedback
   const editFeedback = (item) => {
     setFeedbackEdit({
       item,
@@ -38,7 +57,14 @@ export const FeedbackProvider = ({ children }) => {
 
   return (
     <FeedbackContext.Provider
-      value={{ feedback, deleteFeedback, addFeedback, editFeedback }}
+      value={{
+        feedback,
+        deleteFeedback,
+        addFeedback,
+        editFeedback,
+        updateFeedback,
+        feedbackEdit,
+      }}
     >
       {children}
     </FeedbackContext.Provider>

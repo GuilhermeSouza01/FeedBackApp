@@ -3,9 +3,9 @@
 Aplicação construida em React para solidificar os conhecimentos na tecnologia.
 O app tem a funcionalidade de gerar feedbacks, possuindo uma avaliação de 1 a 10, assim como escrever uma descrição ao feedback.
 
-## Screenshots
+## Tela da Aplicação
 
-![App Screenshot](feedback-app.PNG)
+![Tela da aplicação](https://user-images.githubusercontent.com/49689958/217386903-6dc8e344-59ab-4bd5-8a58-f1d6282fe1bd.PNG)
 
 ## Instalação
 

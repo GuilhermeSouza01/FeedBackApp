@@ -6,16 +6,16 @@ const FeedbackStats = () => {
   const { feedback } = useContext(FeedbackContext);
   // Calculate rating average
   const averageRating =
-    feedback.reduce((accumulator, current) => {
-      return accumulator + current.rating;
-    }, 0) / feedback.length;
+    feedback.length === 0
+      ? 0
+      : feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length;
 
-  averageRating.toFixed(1);
+  console.log(averageRating);
 
   return (
     <div className="feedback-stats">
       <h4>{feedback.length} Reviews</h4>
-      <h4>Average rating: {isNaN(averageRating) ? 0 : averageRating}</h4>
+      <h4>Average rating: {averageRating.toFixed(1).replace(/[.,]0$/, "")}</h4>
     </div>
   );
 };

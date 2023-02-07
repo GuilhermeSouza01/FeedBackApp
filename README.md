@@ -5,7 +5,7 @@ O app tem a funcionalidade de gerar feedbacks, possuindo uma avaliação de 1 a 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](feedback-app.PNG)
 
 ## Instalação
 

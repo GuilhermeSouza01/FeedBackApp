@@ -51,10 +51,24 @@ export const FeedbackProvider = ({ children }) => {
   };
   //Update feedback
 
-  const updateFeedback = (id, updItem) => {
-    setFeedback(
-      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
-    );
+  const updateFeedback = async (id, updItem) => {
+    const response = await fetch(`http://localhost:5000/feedback/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updItem),
+    });
+
+    const data = await response.json();
+
+    // NOTE: no need to spread data and item
+    setFeedback(feedback.map((item) => (item.id === id ? data : item)));
+
+    setFeedbackEdit({
+      item: {},
+      edit: false,
+    });
   };
 
   // Edit feedback

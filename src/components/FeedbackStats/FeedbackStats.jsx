@@ -10,6 +10,8 @@ const FeedbackStats = () => {
       ? 0
       : feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length;
 
+  console.log(averageRating);
+
   return (
     <div className="feedback-stats">
       <h4>{feedback.length} Reviews</h4>
